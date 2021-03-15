@@ -22,7 +22,10 @@ class VideoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => (int) $this->faker->numberBetween(1,10),
+            'title' => \Str::title($this->faker->catchPhrase),
+            'url' => $this->faker->url,
+            'description' => $this->faker->paragraphs(2, true)
         ];
     }
 }

@@ -22,7 +22,10 @@ class HighlightFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => rand(1,10) % 3 === 0 ? null : rand(1,10),
+            'seek_to' => rand(20, 240),
+            'length' => rand(10,120),
+            'contents' => $this->faker->paragraphs(3, true),
         ];
     }
 }
